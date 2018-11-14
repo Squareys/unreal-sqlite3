@@ -60,9 +60,9 @@ To avoid compile error for "SQLiteDatabase.h" not found, add the plugin to your 
 ```c++
 using UnrealBuildTool;
 
-public class Craftaverse : ModuleRules
+public class Project : ModuleRules
 {
-	public Craftaverse(ReadOnlyTargetRules Target) : base(Target)
+	public Project(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
