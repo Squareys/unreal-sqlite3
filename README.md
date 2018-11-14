@@ -23,6 +23,8 @@ Windows x64 | 4.21.0 | ✓
 
 Copy this plugin (like Download as ZIP) into the folder **Plugins/CISQLite3** on your project and a start of the project should compile the plugin automatically, if the project is C++. If you don't have a C++ project, then you can just make one for the sole purpose of compiling this plugin. Alternative you can install it as Engine Plugin in the Engine Plugins directory (like **Epic Games/4.12/Engine/Plugins/Runtime/CISQLite3**).
 
+## CISQLite3.Build.cs
+
 ```c++
     PublicIncludePaths.AddRange(
       new string[] {
@@ -52,6 +54,8 @@ For use direct in project change to:
 ```
 
 To avoid compile error for "SQLiteDatabase.h" not found, add the plugin to your {Project}.Build.cs as follows:
+
+## Project.Build.cs
 
 ```c++
 using UnrealBuildTool;
