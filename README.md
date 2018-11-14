@@ -1,6 +1,6 @@
 # Simple SQLite3 Source integration for Unreal Engine 4
 
-Updated to work with Unreal Engine 4.21 and updated SQLite to lastest version 3.25.3
+Updated to work with Unreal Engine 4.21
 
 # History
 
