@@ -1,8 +1,10 @@
 # Simple SQLite3 Source integration for Unreal Engine 4
 
-Based on [SQLite3UE4 Plugin by Jussi Saarivirta & KhArtNJava](https://github.com/KhArtNJava/SQLite3UE4/) but with compiling SQLite3 as part of the module code, this opens up compiling it (hopefully) on all platforms without any extra process.
+Updated to work with Unreal Engine 4.21 and updated SQLite to lastest version 3.25.3
 
 #History
+
+Based on [SQLite3UE4 Plugin by Jussi Saarivirta & KhArtNJava](https://github.com/KhArtNJava/SQLite3UE4/) but with compiling SQLite3 as part of the module code, this opens up compiling it (hopefully) on all platforms without any extra process.
 
 (https://github.com/KhArtNJava/SQLite3UE4/)
 (https://github.com/cindustries/unreal-sqlite3)
