@@ -7,6 +7,8 @@ public class CISQLite3 : ModuleRules
   public CISQLite3(ReadOnlyTargetRules Target) : base(Target)
   {
 
+    PrivatePCHHeaderFile = "Private/CISQLite3PrivatePCH.h";
+
     PublicIncludePaths.AddRange(
       new string[] {
         "CISQLite3/Public"

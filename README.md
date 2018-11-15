@@ -1,34 +1,75 @@
 # Simple SQLite3 Source integration for Unreal Engine 4
 
+Updated to work with Unreal Engine 4.21
+
+# History
+
 Based on [SQLite3UE4 Plugin by Jussi Saarivirta & KhArtNJava](https://github.com/KhArtNJava/SQLite3UE4/) but with compiling SQLite3 as part of the module code, this opens up compiling it (hopefully) on all platforms without any extra process.
 
-Please report any problems to the [issues tracker](https://github.com/cindustries/unreal-sqlite3/issues) on this GitHub, or join us at [#unrealengine on irc.freenode.net](https://webchat.freenode.net/?channels=#unrealengine)), you can msg me under **Getty**.
+(https://github.com/KhArtNJava/SQLite3UE4/)
+(https://github.com/cindustries/unreal-sqlite3)
+(https://github.com/Squareys/unreal-sqlite3)
+
 
 # Difference to SQLite3UE4
 
 SQLite3UE4 integrates sqlite3 as a ThirdParty module, which leads to a chain of complexity and also requires people to build the sqlite3 library before using it. On CISQLite3, we integrated the sqlite3 code directly into the module, and so it gets linked like the rest of the module on compile.
 
-# Works On
+# Compiled and Tested on
 
-Compiled and basic functionality:
-
-OS | Tested
----|-------
-Windows x64 | ✓
-Android | ✓
-
-UE4 Version | Tested
----|-------
-4.20.x | ✓
-4.19.x | ✓
+Windows x64 | 4.21.0 | ✓
 
 # Installation
 
 Copy this plugin (like Download as ZIP) into the folder **Plugins/CISQLite3** on your project and a start of the project should compile the plugin automatically, if the project is C++. If you don't have a C++ project, then you can just make one for the sole purpose of compiling this plugin. Alternative you can install it as Engine Plugin in the Engine Plugins directory (like **Epic Games/4.12/Engine/Plugins/Runtime/CISQLite3**).
 
-# Usage
+## CISQLite3.Build.cs
 
-(More usages to come....)
+```c++
+    PublicIncludePaths.AddRange(
+      new string[] {
+        "CISQLite3/Public"
+      }
+    );
+
+    PrivateIncludePaths.AddRange(
+      new string[] {
+        "CISQLite3/Private"
+      }
+    );
+```
+
+For use direct in project change to:
+
+```c++
+    PublicIncludePaths.AddRange(
+      new string[] {
+      }
+    );
+
+    PrivateIncludePaths.AddRange(
+      new string[] {
+      }
+    );
+```
+
+To avoid compile error for "SQLiteDatabase.h" not found, add the plugin to your {Project}.Build.cs as follows:
+
+## Project.Build.cs
+
+```c++
+using UnrealBuildTool;
+
+public class Project : ModuleRules
+{
+	public Project(ReadOnlyTargetRules Target) : base(Target)
+	{
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay" , "CISQLite3" });
+	}
+}
+```
 
 ## C++
 
